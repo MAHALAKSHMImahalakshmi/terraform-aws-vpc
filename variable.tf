@@ -52,3 +52,20 @@ variable "nat_gatway_tags" {
   type = map(string)
   default= {}   // this is optional variable ,as here default value 
 }
+
+variable "public_route_table_tags" {
+  type = map(string)
+  default= {}   // this is optional variable ,as here default value 
+}
+
+
+variable "private_route_table_tags" {
+  type = map(string)
+  default= {}   // this is optional variable ,as here default value 
+}
+
+variable "database_route_table_tags" {
+  type = map(string)
+  default= {}   // this is optional variable ,as here default value 
+}
+
