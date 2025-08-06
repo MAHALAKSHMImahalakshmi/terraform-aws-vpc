@@ -5,11 +5,11 @@ Edit
 # 🚀 Terraform AWS VPC Module
 
 This repository contains a **production-grade reusable Terraform module** for provisioning a VPC in AWS, including:
-
-- ✅ Public, Private, and Database Subnets (across AZs)
+ - ✅ Public, Private, and Database Subnets (across AZs)
 - ✅ Internet Gateway, NAT Gateway, and Route Tables
 - ✅ Elastic IP for NAT, CIDR input support
 - ✅ Clean input variables and output structure
+- ✅ VPC Peering support for connecting multiple VPCs
 
 ---
 
@@ -25,6 +25,8 @@ As part of my AWS and Terraform journey, I wanted to **understand networking dee
 - Use of `map_public_ip_on_launch` only in **public subnets**
 - Role of **Elastic IPs** vs ephemeral IPs for NAT Gateways
 - Breaking changes and how `terraform state` helps you recover
+- How to configure **VPC Peering** for secure cross-VPC communication
+
 
 ---
 
