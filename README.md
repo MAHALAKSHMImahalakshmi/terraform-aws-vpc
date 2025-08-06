@@ -55,6 +55,7 @@ module "vpc" {
 | IGW / NAT GW  | Based on need                      |
 | Elastic IP    | Static IP for NAT gateway          |
 | Outputs       | All subnet IDs, gateway IDs, AZ info|
+|VPC Peering	  | Secure connection to another VPC|
 
 ---
 
