@@ -167,8 +167,8 @@ module "vpc" {
 This setup provides a scalable and secure AWS network architecture using Terraform, supporting multi-subnet segmentation and VPC peering for cross-VPC communication.
 
 For any questions or help with Terraform code examples for peering routes or security configurations, feel free to ask.
-```
-```mermaid
+
+/*```mermaid
 graph LR
   subgraph Roboshop_VPC_10.0.0.0/16
     VPC_R["VPC: 10.0.0.0/16"]
@@ -214,7 +214,7 @@ graph LR
 
     PEER --> DefaultVPC
 
-  end
+  end*/
 
   subgraph Default_VPC_172.31.0.0/16
     DefaultVPC["Default VPC: 172.31.0.0/16"]
