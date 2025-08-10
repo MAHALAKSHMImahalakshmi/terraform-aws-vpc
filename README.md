@@ -71,6 +71,56 @@ As part of my AWS and Terraform journey, I wanted to **understand networking dee
 💡 Passionate about DevOps, Infra, and Cloud
 
 ---
+graph LR
+  subgraph Roboshop_VPC_10.0.0.0/16
+    VPC_R["VPC: 10.0.0.0/16"]
+    IGW["Internet Gateway"]
+    EIP["Elastic IP for NAT"]
+    NAT["NAT Gateway"]
+    PUB1["Public Subnet 1 (10.0.1.0/24)"]
+    PUB2["Public Subnet 2 (10.0.2.0/24)"]
+    PRI1["Private Subnet 1 (10.0.3.0/24)"]
+    PRI2["Private Subnet 2 (10.0.4.0/24)"]
+    DB1["Database Subnet 1 (10.0.5.0/24)"]
+    DB2["Database Subnet 2 (10.0.6.0/24)"]
+    PUBLRT["Public Route Table"]
+    PRIVRT["Private Route Table"]
+    DBRT["Database Route Table"]
+    PEER["VPC Peering Connection"]
 
+    VPC_R --> IGW
+    IGW -->|Attach| VPC_R
+
+    VPC_R --> PUB1
+    VPC_R --> PUB2
+    VPC_R --> PRI1
+    VPC_R --> PRI2
+    VPC_R --> DB1
+    VPC_R --> DB2
+
+    PUB1 -->|Associate| PUBLRT
+    PUB2 -->|Associate| PUBLRT
+    PRI1 -->|Associate| PRIVRT
+    PRI2 -->|Associate| PRIVRT
+    DB1 -->|Associate| DBRT
+    DB2 -->|Associate| DBRT
+
+    PUBLRT -->|Route 0.0.0.0/0 via IGW| IGW
+    PRIVRT -->|Route 0.0.0.0/0 via NAT| NAT
+    DBRT -->|Route 0.0.0.0/0 via NAT| NAT
+
+    EIP --> NAT
+    PUB1 --> NAT
+
+    VPC_R --> PEER
+
+    PEER --> DefaultVPC
+
+  end
+
+  subgraph Default_VPC_172.31.0.0/16
+    DefaultVPC["Default VPC: 172.31.0.0/16"]
+  end
+  
 
  
