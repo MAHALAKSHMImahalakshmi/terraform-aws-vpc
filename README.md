@@ -71,6 +71,7 @@ As part of my AWS and Terraform journey, I wanted to **understand networking dee
 💡 Passionate about DevOps, Infra, and Cloud
 
 ---
+```mermaid
 graph LR
   subgraph Roboshop_VPC_10.0.0.0/16
     VPC_R["VPC: 10.0.0.0/16"]
@@ -121,6 +122,7 @@ graph LR
   subgraph Default_VPC_172.31.0.0/16
     DefaultVPC["Default VPC: 172.31.0.0/16"]
   end
+```
   
 
  
