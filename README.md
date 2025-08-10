@@ -71,7 +71,7 @@ As part of my AWS and Terraform journey, I wanted to **understand networking dee
 💡 Passionate about DevOps, Infra, and Cloud
 
 ---
-```markdown
+
 # Terraform AWS VPC Module Setup
 
 This README provides a detailed explanation of the Terraform AWS VPC module setup for creating a robust VPC environment with public, private, and database subnets, including VPC peering with the default VPC.
